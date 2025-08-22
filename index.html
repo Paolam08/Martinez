@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi Página</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-image: url("o.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            background-color: orange; 
+        }
+
+        .barra-negra {
+            background-color: black;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            height: auto; 
+            overflow: visible; 
+            transition: none;
+        }
+
+        .barra-negra a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            display: block;
+        }
+
+        .barra-negra a:hover {
+            text-decoration: underline;
+        }
+
+        .menu-btn {
+            background-color: #333;
+            color: white;
+            padding: 10px 15px; 
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            margin: 15px auto; 
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            display: none; 
+        }
+
+        @media (max-width: 768px) {
+            .barra-negra {
+                display: none; 
+                flex-direction: column;
+                height: 0;
+                overflow: hidden;
+                transition: height 0.5s ease-out;
+                padding: 10px 0;
+            }
+
+            .barra-negra a {
+                margin: 10px 0;
+            }
+
+            .menu-btn {
+                display: block; 
+            }
+        }
+    </style>
+</head>
+<body bgcolor="orange">
+    <center>
+        <img src="maxresdefault.jpg" alt="Fotografía" width="400" height="215"><br><br>
+
+        <button class="menu-btn" onclick="toggleMenu()">Menú</button>
+
+        <div class="barra-negra" id="barraMenu">
+            <a href="Inicio.html">Inicio</a>
+            <a href="Galeria.html">Galería</a>
+            <a href="Ordenar.html">Ordenar</a>
+            <a href="Contáctanos.html">Contáctanos</a>
+        </div>
+    </center>
+
+    <script>
+        function toggleMenu() {
+            var barra = document.getElementById("barraMenu");
+
+            if (barra.style.height === "0px" || barra.style.height === "" || barra.style.display === "none") {
+                barra.style.display = "flex"; 
+                barra.style.flexDirection = "column"; 
+                barra.style.height = "auto"; 
+            } else {
+                barra.style.height = "0px";
+                setTimeout(function () {
+                    barra.style.display = "none";
+                }, 500); 
+            }
+        }
+    </script>
+</body>
+</html>
