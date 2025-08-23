@@ -1,104 +1,111 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Mi Página</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página con Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            background-image: url("o.jpg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            margin: 0;
-            background-color: orange; 
-        }
-
-        .barra-negra {
-            background-color: black;
+        header, footer {
+            background-color: #343a40;
             color: white;
-            padding: 15px 20px;
+            padding: 2rem 0;
             text-align: center;
-            display: flex; 
-            justify-content: center; 
-            align-items: center;
-            height: auto; 
-            overflow: visible; 
-            transition: none;
         }
-
-        .barra-negra a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            display: block;
+        nav {
+            background-color: #f8f9fa;
+            padding: 1rem 0;
         }
-
-        .barra-negra a:hover {
-            text-decoration: underline;
+        .main-content {
+            padding: 3rem 0;
         }
-
-        .menu-btn {
-            background-color: #333;
-            color: white;
-            padding: 10px 15px; 
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-            margin: 15px auto; 
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            display: none; 
+        .card {
+            margin-bottom: 1.5rem;
         }
-
-        @media (max-width: 768px) {
-            .barra-negra {
-                display: none; 
-                flex-direction: column;
-                height: 0;
-                overflow: hidden;
-                transition: height 0.5s ease-out;
-                padding: 10px 0;
-            }
-
-            .barra-negra a {
-                margin: 10px 0;
-            }
-
-            .menu-btn {
-                display: block; 
-            }
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
         }
     </style>
 </head>
-<body bgcolor="orange">
-    <center>
-        <img src="maxresdefault.jpg" alt="Fotografía" width="400" height="215"><br><br>
+<body>
 
-        <button class="menu-btn" onclick="toggleMenu()">Menú</button>
+    <header class="container-fluid">
+        <div class="logo">Logo</div>
+        <h1>Mi Página con Bootstrap</h1>
+        <p>Estructura básica: Header, Nav, Main (3 contenedores) y Footer</p>
+    </header>
 
-        <div class="barra-negra" id="barraMenu">
-            <a href="Inicio.html">Inicio</a>
-            <a href="Productos.html">Productos</a>
-            <a href="Registro.html">Registro</a>
-            <a href="Contáctanos.html">Contáctanos</a>
+    <nav class="container-fluid">
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Servicios</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contacto</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="container main-content">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Contenedor 1: Bienvenida</h5>
+                        <p class="card-text">
+                            Este es el primer contenedor. Aquí puedes colocar una introducción sobre tu sitio o proyecto.
+                        </p>
+                        <a href="#" class="btn btn-primary">Más información</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Contenedor 2: Servicios</h5>
+                        <p class="card-text">
+                            Aquí puedes listar los servicios que ofreces a tus clientes.
+                        </p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Servicio A</li>
+                            <li class="list-group-item">Servicio B</li>
+                            <li class="list-group-item">Servicio C</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Contenedor 3: Contacto</h5>
+                        <p class="card-text">
+                            Información de contacto para que los usuarios puedan comunicarse contigo.
+                        </p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Teléfono: 123-456-7890</li>
+                            <li class="list-group-item">Correo: info@ejemplo.com</li>
+                            <li class="list-group-item">Dirección: Calle Falsa 123</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-    </center>
+    </main>
 
-    <script>
-        function toggleMenu() {
-            var barra = document.getElementById("barraMenu");
+    <footer class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <p>&copy; 2025 Mi Sitio. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
 
-            if (barra.style.height === "0px" || barra.style.height === "" || barra.style.display === "none") {
-                barra.style.display = "flex"; 
-                barra.style.flexDirection = "column"; 
-                barra.style.height = "auto"; 
-            } else {
-                barra.style.height = "0px";
-                setTimeout(function () {
-                    barra.style.display = "none";
-                }, 500); 
-            }
-        }
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
