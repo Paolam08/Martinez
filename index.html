@@ -6,19 +6,28 @@
     <title>Mi Página</title>
     <!-- Enlace a Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Cambiamos color azul a lila */
+        .bg-lila {
+            background-color: #A57ED6 !important;
+        }
+    </style>
 </head>
 <body>
 
     <!-- HEADER -->
-    <header class="bg-primary text-white text-center py-4">
-        <h1>Mi Página con Bootstrap</h1>
-        <p>Una forma sencilla de organizar contenido</p>
+    <header class="bg-lila text-white text-center py-4">
+        <h1>Mi Página</h1>
+        <p>Bienvenidos todos a mi página </p>
     </header>
 
     <!-- NAV (barra de navegación) -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">Logo</a>
+            <!-- Reemplazamos "Logo" por imagen -->
+            <a class="navbar-brand" href="#">
+                <img src="ruta-de-tu-imagen.jpg" alt="Logo" style="width:100px; height:auto;">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -42,7 +51,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Bienvenida</h5>
                         <p class="card-text">Aquí puedes poner una presentación o introducción de tu sitio.</p>
-                        <a href="#" class="btn btn-primary">Ver más</a>
+                        <a href="#" class="btn btn-lila" style="background-color:#A57ED6; border:none;">Ver más</a>
                     </div>
                 </div>
             </div>
@@ -53,9 +62,9 @@
                     <div class="card-body">
                         <h5 class="card-title">Servicios</h5>
                         <ul>
-                            <li>Servicio A</li>
-                            <li>Servicio B</li>
-                            <li>Servicio C</li>
+                            <li>Servicio de manicura</li>
+                            <li>Servicio de alisado B</li>
+                            <li>Servicio de pedicura</li>
                         </ul>
                     </div>
                 </div>
@@ -67,7 +76,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Contacto</h5>
                         <p>Teléfono: 123-456-789</p>
-                        <p>Email: ejemplo@correo.com</p>
+                        <p>Email: mundodebelleza@correo.com</p>
                     </div>
                 </div>
             </div>
@@ -76,8 +85,8 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-primary text-white text-center py-3">
-         Bienvenidos a mi página .
+    <footer class="bg-lila text-white text-center py-3">
+         Bienvenidos a mi página.
     </footer>
 
     <!-- Script de Bootstrap -->
